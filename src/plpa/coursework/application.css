@@ -1,0 +1,29 @@
+.tile {
+	-fx-stroke-width: 1;
+	-fx-stroke-type: outside;
+	-fx-stroke: rgb(79,79,79);	
+	-fx-smooth: true;
+}
+
+.tile.empty {
+	-fx-fill: rgb(200,200,200);
+	-fx-background-image: url("http://www.bogotobogo.com/images/java/tutorial/java_images/Duke256.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+}
+
+.tile.path {
+	-fx-fill: green;
+}
+
+.tile.barrier {
+	-fx-fill: gray;
+}
+
+.tile.parking {
+	-fx-fill: red;
+}
+
+.tile.workstation {
+	-fx-fill: yellow;
+}
