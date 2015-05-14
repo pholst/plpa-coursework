@@ -23,7 +23,7 @@ public class FactoryFloorController {
 
 	@FXML
 	public void initialize() {
-		Robot robot = new Robot(1,10,1);
+		Robot robot = new Robot(1,10,2);
 		Factory factory = new Factory(robot);
 		FloorPane floorPane = new FloorPane(factory);
 		splitPane.getItems().set(0, floorPane);
@@ -43,6 +43,7 @@ public class FactoryFloorController {
 		
 		private Robot robot;
 		private FloorPane floorPane;
+		private String previousLine = "df";
 		
 		public ReadFromLogFileTask(Robot robot, FloorPane floorPane) {
 			
@@ -71,7 +72,7 @@ public class FactoryFloorController {
 					} else {
 						br.close();
 					}
-					Thread.sleep(200);
+					Thread.sleep(50);
 
 					
 				}
@@ -81,11 +82,17 @@ public class FactoryFloorController {
 		}
 		
 		private void handleInput(String line) {
-			String[] args = line.split(",");
-			robot.setX(Integer.parseInt(args[1]));
-			robot.setY(Integer.parseInt(args[2]));
-			robot.setDir(Integer.parseInt(args[3]));
-			floorPane.repaint();
+			if (!line.equals(previousLine)) {
+				String[] args = line.split(",");
+				robot.setXOld(robot.getX());
+				robot.setYOld(robot.getY());
+				robot.setDirOld(robot.getDir());
+				robot.setX(Integer.parseInt(args[1]));
+				robot.setY(Integer.parseInt(args[2]));
+				robot.setDir(Integer.parseInt(args[3]));
+				floorPane.repaint(); 
+			}
+			previousLine = line;
 		}
 		
 	}

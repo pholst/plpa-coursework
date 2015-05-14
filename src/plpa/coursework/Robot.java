@@ -4,7 +4,10 @@ public class Robot {
 	
 	private int x;
 	private int y;
+	private int xOld;
+	private int yOld;
 	private int dir;
+	private int dirOld;
 
 	public Robot(int x, int y, int dir) {
 		this.x = x;
@@ -20,8 +23,20 @@ public class Robot {
 		return x;
 	}
 	
+	public int getXOld() {
+		return xOld;
+	}
+	
+	public int getYOld() {
+		return yOld;
+	}
+	
 	public int getDir() {
 		return dir;
+	}
+	
+	public int getDirOld() {
+		return dirOld;
 	}
 	
 	public void setX(int x) {
@@ -31,9 +46,21 @@ public class Robot {
 	public void setY(int y) {
 		this.y = y;
 	}
+		
+	public void setXOld(int xOld) {
+		this.xOld = xOld;
+	}
+
+	public void setYOld(int yOld) {
+		this.yOld = yOld;
+	}
 	
 	public void setDir(int dir) {
 		this.dir = dir;
+	}
+	
+	public void setDirOld(int dirOld) {
+		this.dirOld = dirOld;
 	}
 
 }
