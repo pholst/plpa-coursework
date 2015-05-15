@@ -13,6 +13,9 @@ public class Robot {
 		this.x = x;
 		this.y = y;
 		this.dir = dir;
+		this.xOld = x;
+		this.yOld = y;
+		this.dirOld = dir;
 	}
 	
 	public int getY() {

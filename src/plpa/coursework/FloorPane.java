@@ -9,7 +9,6 @@ import javafx.beans.value.ObservableValue;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
-import javafx.scene.shape.Polygon;
 import javafx.util.Duration;
 
 public class FloorPane extends Pane {
@@ -76,23 +75,23 @@ public class FloorPane extends Pane {
 		ImageView im = new ImageView(image);
 
 		
-		//im.setRotate(90 * factory.getRobot().getDir());
+        im.setX(xOld*tileWidth);
+        im.setY(yOld*tileHeight);
 		im.setFitWidth(tileWidth);
 		im.setFitHeight(tileHeight);
 		
 		if (dir != dirOld) {
-			im.setX(x*tileWidth);
-			im.setY(y*tileHeight);
 			RotateTransition rt = new RotateTransition(Duration.millis(1000), im);
 			rt.setFromAngle(90 * dirOld);
 			rt.setByAngle(90 * dir - dirOld * 90);
 			rt.play();
 		} else {
+			im.setRotate(90 * dir);
 			TranslateTransition tt = new TranslateTransition(Duration.millis(1000), im);
 			System.out.println("[" + xOld + ", " + yOld + "]");
 			System.out.println("[" + x + "," + y + "]");
-			tt.setFromX(xOld * tileWidth);
-			tt.setFromY(yOld * tileHeight);
+			//tt.setFromX(xOld * tileWidth);
+			//tt.setFromY(yOld * tileHeight);
 			tt.setByX(x * tileWidth - xOld * tileWidth);
 			tt.setByY(y * tileHeight - yOld * tileHeight);
 			tt.setAutoReverse(false);

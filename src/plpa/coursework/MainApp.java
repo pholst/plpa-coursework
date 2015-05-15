@@ -16,6 +16,7 @@ public class MainApp extends Application {
 	public void start(Stage primaryStage) throws Exception {
 		this.primaryStage = primaryStage; 
 		this.primaryStage.setTitle("Robot factory floor");
+		this.primaryStage.setMaximized(true);
 		
 		initRootLayout();
 		showFactoryFloorLayout();

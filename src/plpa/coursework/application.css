@@ -6,24 +6,26 @@
 }
 
 .tile.empty {
-	-fx-fill: rgb(200,200,200);
-	-fx-background-image: url("http://www.bogotobogo.com/images/java/tutorial/java_images/Duke256.png");
-    -fx-background-repeat: no-repeat;
-    -fx-background-size: contain;
+	-fx-fill: lightgray;
+	/* -fx-fill: linear-gradient(#EEE, #DDD); */
 }
 
 .tile.path {
-	-fx-fill: green;
+	-fx-fill: #5BBF40;
+    /* -fx-fill: linear-gradient(#ADD633, #9CC12E); */
 }
 
 .tile.barrier {
-	-fx-fill: gray;
+	-fx-fill: black;
+    /* -fx-fill: linear-gradient(#444, #222); */
 }
 
 .tile.parking {
 	-fx-fill: red;
+	/* -fx-fill: linear-gradient(#FF0000, #E60000); */
 }
 
 .tile.workstation {
 	-fx-fill: yellow;
+    /* -fx-fill: linear-gradient(#FFFF66, #FFFF00); */
 }

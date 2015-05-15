@@ -23,7 +23,7 @@ public class FactoryFloorController {
 
 	@FXML
 	public void initialize() {
-		Robot robot = new Robot(1,10,2);
+		Robot robot = new Robot(1,10,0);
 		Factory factory = new Factory(robot);
 		FloorPane floorPane = new FloorPane(factory);
 		splitPane.getItems().set(0, floorPane);
