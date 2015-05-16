@@ -73,7 +73,6 @@ public class FloorPane extends Pane {
 		
 		Image image = new Image(getClass().getResourceAsStream("arrow.png"));
 		ImageView im = new ImageView(image);
-
 		
         im.setX(xOld*tileWidth);
         im.setY(yOld*tileHeight);
@@ -88,10 +87,6 @@ public class FloorPane extends Pane {
 		} else {
 			im.setRotate(90 * dir);
 			TranslateTransition tt = new TranslateTransition(Duration.millis(1000), im);
-			System.out.println("[" + xOld + ", " + yOld + "]");
-			System.out.println("[" + x + "," + y + "]");
-			//tt.setFromX(xOld * tileWidth);
-			//tt.setFromY(yOld * tileHeight);
 			tt.setByX(x * tileWidth - xOld * tileWidth);
 			tt.setByY(y * tileHeight - yOld * tileHeight);
 			tt.setAutoReverse(false);
