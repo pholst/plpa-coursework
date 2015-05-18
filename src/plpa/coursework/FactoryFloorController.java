@@ -33,9 +33,7 @@ public class FactoryFloorController {
 		th.setDaemon(true);
 		th.start();
 
-		runBtn.setOnAction((event) -> {
-
-		});
+		
 
 	}
 	
