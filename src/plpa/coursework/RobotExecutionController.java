@@ -1,12 +1,9 @@
 package plpa.coursework;
 
-import java.util.ArrayList;
-
 import javafx.collections.ObservableList;
 import javafx.fxml.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
-import javafx.scene.control.TextArea;
 
 public class RobotExecutionController {
 
@@ -16,7 +13,7 @@ public class RobotExecutionController {
 	private Button back;
 	
 	@FXML
-	private ListView<String> instructions;
+	private ListView<String> commandsListView;
 
 	@FXML
 	public void initialize() {
@@ -28,7 +25,10 @@ public class RobotExecutionController {
 	}
 	
 	public void updateListView(ObservableList<String> commands) {
-		instructions.setItems(commands);
-		
+		commandsListView.setItems(commands);
+	}
+	
+	public void setInstructionNumber(int i) {
+		commandsListView.getSelectionModel().select(i);
 	}
 }

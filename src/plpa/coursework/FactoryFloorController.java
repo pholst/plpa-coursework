@@ -5,24 +5,18 @@ import java.io.*;
 import javafx.application.Platform;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.SplitPane;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
 
 public class FactoryFloorController {
 
+	private MainApp app;
 
 	@FXML
 	public AnchorPane factoryFloorPane;
 	
-	
-	public FactoryFloorController() {
-	}
-
 	@FXML
 	public void initialize() {
-		Robot robot = new Robot(0,8,0);
+		Robot robot = new Robot(1,10,0);
 		Factory factory = new Factory(robot);
 		FloorPane floorPane = new FloorPane(factory);
 		AnchorPane.setBottomAnchor(floorPane, 0.0);
@@ -34,7 +28,10 @@ public class FactoryFloorController {
 		Thread th = new Thread(new ReadFromLogFileTask(robot, floorPane));
 		th.setDaemon(true);
 		th.start();
-
+	}
+	
+	public void setApplication(MainApp mainApp) {
+		this.app = mainApp; 
 	}
 	
 	class ReadFromLogFileTask extends Task<Void> {
@@ -89,6 +86,7 @@ public class FactoryFloorController {
 				robot.setY(Integer.parseInt(args[2]));
 				robot.setDir(Integer.parseInt(args[3]));
 				floorPane.repaint(); 
+				app.getRobotExecutionController().setInstructionNumber(Integer.parseInt(args[0]));
 			}
 			previousLine = line;
 		}

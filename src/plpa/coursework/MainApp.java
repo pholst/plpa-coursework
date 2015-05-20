@@ -4,14 +4,11 @@ import javafx.application.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.stage.Stage;
-import javafx.scene.control.Button;
 import javafx.scene.control.SplitPane;
 import javafx.scene.layout.*;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 
 import java.io.*;
-import java.util.ArrayList;
 
 import javafx.scene.*;
 
@@ -58,6 +55,8 @@ public class MainApp extends Application {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(MainApp.class.getResource("FactoryFloorLayout.fxml"));
         AnchorPane pane = (AnchorPane) loader.load();
+        FactoryFloorController controller = loader.getController();
+        controller.setApplication(this);
         rootLayout.getItems().set(0, pane);
 	}
 	
@@ -101,6 +100,10 @@ public class MainApp extends Application {
 	
 	public void clearCommands() {
 		commands.clear();
+	}
+	
+	public RobotExecutionController getRobotExecutionController() {
+		return robotExecutionController;
 	}
 	
 	public static void main(String[] args) {
