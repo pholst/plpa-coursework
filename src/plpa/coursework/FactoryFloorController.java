@@ -7,35 +7,33 @@ import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.SplitPane;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 
 public class FactoryFloorController {
 
 
 	@FXML
-	private SplitPane splitPane;
-
-	@FXML
-	private Button runBtn;
-
+	public AnchorPane factoryFloorPane;
+	
+	
 	public FactoryFloorController() {
 	}
 
 	@FXML
 	public void initialize() {
-		Robot robot = new Robot(1,10,0);
+		Robot robot = new Robot(0,8,0);
 		Factory factory = new Factory(robot);
 		FloorPane floorPane = new FloorPane(factory);
-		splitPane.getItems().set(0, floorPane);
-		splitPane.setDividerPositions(0.75);
+		AnchorPane.setBottomAnchor(floorPane, 0.0);
+		AnchorPane.setLeftAnchor(floorPane, 0.0);
+		AnchorPane.setRightAnchor(floorPane, 0.0);
+		AnchorPane.setTopAnchor(floorPane, 0.0);
+		factoryFloorPane.getChildren().add(floorPane);
 
 		Thread th = new Thread(new ReadFromLogFileTask(robot, floorPane));
 		th.setDaemon(true);
 		th.start();
-
-		runBtn.setOnAction((event) -> {
-
-		});
 
 	}
 	

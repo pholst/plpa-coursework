@@ -2,15 +2,18 @@ package plpa.coursework;
 
 import javafx.application.*;
 import javafx.stage.Stage;
+import javafx.scene.control.SplitPane;
 import javafx.scene.layout.*;
 import javafx.fxml.FXMLLoader;
+
 import java.io.*;
+
 import javafx.scene.*;
 
 public class MainApp extends Application {
 
 	private Stage primaryStage;
-	private BorderPane rootLayout;
+	private SplitPane rootLayout;
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
@@ -22,33 +25,25 @@ public class MainApp extends Application {
 		showFactoryFloorLayout();
 	}
 
-	private void initRootLayout() {
-		try {
-			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(MainApp.class.getResource("RootLayout.fxml"));
-			rootLayout = (BorderPane) loader.load();
+	private void initRootLayout() throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(MainApp.class.getResource("RootLayout.fxml"));
+        rootLayout = (SplitPane) loader.load();
 
-			Scene scene = new Scene(rootLayout);
-			
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			primaryStage.setScene(scene);
-			primaryStage.show();
-		} catch (IOException e) {
-			e.printStackTrace(); 
-		}
+        Scene scene = new Scene(rootLayout);
+
+        scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+        primaryStage.setScene(scene);
+        primaryStage.show();
 	}
-	
-	private void showFactoryFloorLayout() {
-		try {
-			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(MainApp.class.getResource("FactoryFloorLayout.fxml"));
-			AnchorPane pane = (AnchorPane) loader.load();
 
-			rootLayout.setCenter(pane);
-			
-		} catch (IOException e) {
-			e.printStackTrace(); 
-		}
+	private void showFactoryFloorLayout() throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(MainApp.class.getResource("FactoryFloorLayout.fxml"));
+        AnchorPane pane = (AnchorPane) loader.load();
+        rootLayout.getItems().set(0, pane);
+        
+
 	}
 
 	public static void main(String[] args) {
