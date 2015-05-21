@@ -64,7 +64,7 @@ public class FloorPane extends Pane {
 		
 		createRobot();
 	}
-	
+
 	private void createArrow(int x, int y, int dir) {
 		Image image = new Image(getClass().getResourceAsStream("arrow.png"));
 		ImageView im = new ImageView(image);
@@ -72,9 +72,10 @@ public class FloorPane extends Pane {
 		im.setY(y*tileHeight);
 		im.setFitHeight(tileWidth);
 		im.setFitWidth(tileHeight);
+		im.setRotate(90*dir);
 		getChildren().add(im);
 	}
-	
+
 	private void createRobot() {
 		int x = factory.getRobot().getX();
 		int y = factory.getRobot().getY();
