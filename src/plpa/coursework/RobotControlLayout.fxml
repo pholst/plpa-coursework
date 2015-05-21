@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="plpa.coursework.RobotControlController">
+   <children>
+      <BorderPane layoutX="8.0" layoutY="14.0" prefHeight="600.0" prefWidth="300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <TextArea fx:id="input" prefHeight="200.0" prefWidth="200.0" text="(TURN_RIGHT 1)&#10;(MOVE 2)&#10;(TURN_RIGHT 1)&#10;(MOVE 3)&#10;(TURN_LEFT 1)&#10;(MOVE 17)&#10;(TURN_LEFT 1)&#10;(MOVE 5)&#10;(TURN_RIGHT 1)&#10;(MOVE 6)&#10;(TURN_RIGHT 1)&#10;(MOVE 5)" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+            </TextArea>
+         </center>
+         <bottom>
+            <AnchorPane prefHeight="30.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="run" mnemonicParsing="false" prefHeight="200.0" prefWidth="280.0" text="Run" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+               <BorderPane.margin>
+                  <Insets top="10.0" />
+               </BorderPane.margin>
+            </AnchorPane>
+         </bottom>
+      </BorderPane>
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</AnchorPane>

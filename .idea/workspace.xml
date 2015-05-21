@@ -2,8 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2880c532-55d3-4aca-908f-45d62ad5a2e4" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/plpa/coursework/RobotControlController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/plpa/coursework/RobotControlLayout.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/plpa/coursework/RobotExecutionController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/plpa/coursework/RobotExecutionLayout.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/writer.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/plpa/coursework/FactoryFloorController$ReadFromLogFileTask$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/plpa/coursework/FactoryFloorController$ReadFromLogFileTask.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/plpa/coursework/FactoryFloorController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/plpa/coursework/FloorPane$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/plpa/coursework/FloorPane$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/plpa/coursework/FloorPane.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/plpa/coursework/MainApp.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/plpa/coursework/map.scm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/plpa/coursework/robot.scm" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.classpath" afterPath="$PROJECT_DIR$/.classpath" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/plpa/coursework/FactoryFloorController.java" afterPath="$PROJECT_DIR$/src/plpa/coursework/FactoryFloorController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/plpa/coursework/FactoryFloorLayout.fxml" afterPath="$PROJECT_DIR$/bin/plpa/coursework/FactoryFloorLayout.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/plpa/coursework/FactoryFloorLayout.fxml" afterPath="$PROJECT_DIR$/src/plpa/coursework/FactoryFloorLayout.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/plpa/coursework/FloorPane.java" afterPath="$PROJECT_DIR$/src/plpa/coursework/FloorPane.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/plpa/coursework/MainApp.java" afterPath="$PROJECT_DIR$/src/plpa/coursework/MainApp.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/plpa/coursework/RootLayout.fxml" afterPath="$PROJECT_DIR$/bin/plpa/coursework/RootLayout.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/plpa/coursework/RootLayout.fxml" afterPath="$PROJECT_DIR$/src/plpa/coursework/RootLayout.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/plpa/coursework/application.css" afterPath="$PROJECT_DIR$/bin/plpa/coursework/application.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/plpa/coursework/application.css" afterPath="$PROJECT_DIR$/src/plpa/coursework/application.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log.txt" afterPath="$PROJECT_DIR$/log.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" afterPath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="RobotFloor.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,8 +57,10 @@
         <entry file="file://$PROJECT_DIR$/src/plpa/coursework/MainApp.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
-              <folding />
+              <caret line="22" column="34" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -40,7 +69,7 @@
         <entry file="file://$PROJECT_DIR$/src/plpa/coursework/RootLayout.fxml">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="24" column="59" selection-start-line="24" selection-start-column="54" selection-end-line="24" selection-end-column="59" />
+              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -61,7 +90,12 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-              <folding />
+              <folding>
+                <element signature="e#266#267#0" expanded="false" />
+                <element signature="e#291#292#0" expanded="false" />
+                <element signature="e#319#320#0" expanded="false" />
+                <element signature="e#344#345#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -70,18 +104,39 @@
         <entry file="file://$PROJECT_DIR$/src/plpa/coursework/FloorPane.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="91" column="37" selection-start-line="91" selection-start-column="37" selection-end-line="91" selection-end-column="37" />
-              <folding />
+              <caret line="75" column="33" selection-start-line="75" selection-start-column="33" selection-end-line="75" selection-end-column="33" />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <marker date="1432200864000" expanded="true" signature="685:833" placeholder="(ChangeListener) (observable, oldValue, newValue) → {" />
+                <marker date="1432200864000" expanded="true" signature="901:907" placeholder="}" />
+                <marker date="1432200864000" expanded="true" signature="942:1090" placeholder="(ChangeListener) (observable, oldValue, newValue) → {" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FactoryFloorController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/plpa/coursework/FactoryFloorController.java">
+      <file leaf-file-name="RobotExecutionController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/plpa/coursework/RobotExecutionController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33268103">
-              <caret line="35" column="8" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
-              <folding />
+            <state vertical-scroll-proportion="0.46966732">
+              <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RobotControlController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/plpa/coursework/RobotControlController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#403#404#0" expanded="false" />
+                <element signature="e#424#425#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -196,6 +251,11 @@
     <property name="recentsLimit" value="5" />
     <property name="dynamic.classpath" value="false" />
     <property name="FullScreen" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunManager" selected="Application.MainApp">
     <configuration default="false" name="MainApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -490,16 +550,16 @@
       <workItem from="1431693879771" duration="959000" />
       <workItem from="1431727791673" duration="640000" />
       <workItem from="1431932005700" duration="513000" />
-      <workItem from="1431935574824" duration="31000" />
+      <workItem from="1431935574824" duration="1071000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2723000" />
+    <option name="totallyTimeSpent" value="3763000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="201" y="23" width="1239" height="873" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -551,7 +611,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -575,7 +637,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="e#266#267#0" expanded="false" />
+            <element signature="e#291#292#0" expanded="false" />
+            <element signature="e#319#320#0" expanded="false" />
+            <element signature="e#344#345#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -583,7 +650,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <marker date="1432200864000" expanded="true" signature="685:833" placeholder="(ChangeListener) (observable, oldValue, newValue) → {" />
+            <marker date="1432200864000" expanded="true" signature="901:907" placeholder="}" />
+            <marker date="1432200864000" expanded="true" signature="942:1090" placeholder="(ChangeListener) (observable, oldValue, newValue) → {" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -591,7 +663,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#826#827#0" expanded="false" />
+            <element signature="e#852#853#0" expanded="false" />
+            <element signature="e#1448#1552#0" expanded="false" />
+            <element signature="e#1551#1552#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -599,7 +676,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -623,7 +702,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="e#266#267#0" expanded="false" />
+            <element signature="e#291#292#0" expanded="false" />
+            <element signature="e#319#320#0" expanded="false" />
+            <element signature="e#344#345#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -631,7 +715,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="96" column="37" selection-start-line="96" selection-start-column="37" selection-end-line="96" selection-end-column="37" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <marker date="1432200864000" expanded="true" signature="685:833" placeholder="(ChangeListener) (observable, oldValue, newValue) → {" />
+            <marker date="1432200864000" expanded="true" signature="901:907" placeholder="}" />
+            <marker date="1432200864000" expanded="true" signature="942:1090" placeholder="(ChangeListener) (observable, oldValue, newValue) → {" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -639,7 +728,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#826#827#0" expanded="false" />
+            <element signature="e#852#853#0" expanded="false" />
+            <element signature="e#1448#1552#0" expanded="false" />
+            <element signature="e#1551#1552#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -647,7 +741,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -655,7 +751,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <marker date="1432200864000" expanded="true" signature="685:833" placeholder="(ChangeListener) (observable, oldValue, newValue) → {" />
+            <marker date="1432200864000" expanded="true" signature="901:907" placeholder="}" />
+            <marker date="1432200864000" expanded="true" signature="942:1090" placeholder="(ChangeListener) (observable, oldValue, newValue) → {" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -663,7 +764,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#826#827#0" expanded="false" />
+            <element signature="e#852#853#0" expanded="false" />
+            <element signature="e#1448#1552#0" expanded="false" />
+            <element signature="e#1551#1552#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -671,7 +777,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -679,22 +787,29 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#826#827#0" expanded="false" />
+            <element signature="e#852#853#0" expanded="false" />
+            <element signature="e#1448#1552#0" expanded="false" />
+            <element signature="e#1551#1552#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/plpa/coursework/MainApp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
-          <folding />
+          <caret line="22" column="34" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/plpa/coursework/RootLayout.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="59" selection-start-line="24" selection-start-column="54" selection-end-line="24" selection-end-column="59" />
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -711,25 +826,137 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="e#266#267#0" expanded="false" />
+            <element signature="e#291#292#0" expanded="false" />
+            <element signature="e#319#320#0" expanded="false" />
+            <element signature="e#344#345#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/plpa/coursework/FactoryFloorController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30332682">
+          <caret line="32" column="8" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="8" />
+          <folding>
+            <element signature="e#826#827#0" expanded="false" />
+            <element signature="e#852#853#0" expanded="false" />
+            <element signature="e#1448#1552#0" expanded="false" />
+            <element signature="e#1551#1552#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/plpa/coursework/FloorPane.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="91" column="37" selection-start-line="91" selection-start-column="37" selection-end-line="91" selection-end-column="37" />
-          <folding />
+          <caret line="75" column="33" selection-start-line="75" selection-start-column="33" selection-end-line="75" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <marker date="1432200864000" expanded="true" signature="685:833" placeholder="(ChangeListener) (observable, oldValue, newValue) → {" />
+            <marker date="1432200864000" expanded="true" signature="901:907" placeholder="}" />
+            <marker date="1432200864000" expanded="true" signature="942:1090" placeholder="(ChangeListener) (observable, oldValue, newValue) → {" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/plpa/coursework/FactoryFloorController.java">
+    <entry file="file://$PROJECT_DIR$/src/plpa/coursework/RobotControlController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33268103">
-          <caret line="35" column="8" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
-          <folding />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#403#404#0" expanded="false" />
+            <element signature="e#424#425#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/plpa/coursework/RobotExecutionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46966732">
+          <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>RobotFloor</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

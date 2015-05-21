@@ -5,36 +5,33 @@ import java.io.*;
 import javafx.application.Platform;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.SplitPane;
-import javafx.scene.layout.Pane;
+import javafx.scene.layout.AnchorPane;
 
 public class FactoryFloorController {
 
+	private MainApp app;
 
 	@FXML
-	private SplitPane splitPane;
-
-	@FXML
-	private Button runBtn;
-
-	public FactoryFloorController() {
-	}
-
+	public AnchorPane factoryFloorPane;
+	
 	@FXML
 	public void initialize() {
 		Robot robot = new Robot(1,10,0);
 		Factory factory = new Factory(robot);
 		FloorPane floorPane = new FloorPane(factory);
-		splitPane.getItems().set(0, floorPane);
-		splitPane.setDividerPositions(0.75);
+		AnchorPane.setBottomAnchor(floorPane, 0.0);
+		AnchorPane.setLeftAnchor(floorPane, 0.0);
+		AnchorPane.setRightAnchor(floorPane, 0.0);
+		AnchorPane.setTopAnchor(floorPane, 0.0);
+		factoryFloorPane.getChildren().add(floorPane);
 
 		Thread th = new Thread(new ReadFromLogFileTask(robot, floorPane));
 		th.setDaemon(true);
 		th.start();
-
-		
-
+	}
+	
+	public void setApplication(MainApp mainApp) {
+		this.app = mainApp; 
 	}
 	
 	class ReadFromLogFileTask extends Task<Void> {
@@ -89,6 +86,7 @@ public class FactoryFloorController {
 				robot.setY(Integer.parseInt(args[2]));
 				robot.setDir(Integer.parseInt(args[3]));
 				floorPane.repaint(); 
+				app.getRobotExecutionController().setInstructionNumber(Integer.parseInt(args[0]));
 			}
 			previousLine = line;
 		}

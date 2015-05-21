@@ -28,7 +28,6 @@ public class FloorPane extends Pane {
 			@Override
 			public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
 				paneWidth = newValue.doubleValue();				
-				//tileWidth = Math.floor(newValue.doubleValue() / factory.floorWidth());
 				repaint();
 			}
         });
@@ -37,7 +36,6 @@ public class FloorPane extends Pane {
 			@Override
 			public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
 				paneHeight = newValue.doubleValue();
-				//tileHeight = Math.floor(newValue.doubleValue() / factory.floorHeight());
 				repaint();
 			}
         });
@@ -95,20 +93,6 @@ public class FloorPane extends Pane {
 		
 		
 		getChildren().add(im);
-		
-	/*	
-		if (factory.getRobot().getDir() % 2 == 0) {
-			robot.getPoints().addAll(new Double[]{
-		    x*tileWidth, y*tileHeight,
-		    x*tileWidth+tileWidth, y*tileHeight+(tileHeight/2),
-		    x*tileWidth, y*tileHeight+tileHeight });
-		} else {
-			robot.getPoints().addAll(new Double[]{
-		    x*tileWidth, y*tileHeight,
-		    x*tileWidth+tileWidth, y*tileHeight,
-		    x*tileWidth+tileWidth/2, y*tileHeight+tileHeight});
-		}
-		*/
 		
 	}
 	
