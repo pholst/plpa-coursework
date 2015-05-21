@@ -1,12 +1,12 @@
 .tile {
 	-fx-stroke-width: 1;
 	-fx-stroke-type: outside;
-	-fx-stroke: rgb(79,79,79);	
+	-fx-stroke: rgb(86,86,86);	
 	-fx-smooth: true;
 }
 
 .tile.empty {
-	-fx-fill: lightgray;
+	-fx-fill: #eee;
 	/* -fx-fill: linear-gradient(#EEE, #DDD); */
 }
 

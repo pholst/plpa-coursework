@@ -45,7 +45,7 @@ var instr = [
 	'11,26,11,2',
 	'11,26,12,2',
 	'11,26,13,2',
-
+	'error "The robot got tired... poor guy.."' 
 ];
 
 (function start(instr) {

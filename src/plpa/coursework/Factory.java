@@ -59,7 +59,7 @@ public class Factory {
 					case 0: tile.getStyleClass().add("empty"); break;
 					case 1: tile.getStyleClass().add("path"); break;
 					case 2: tile.getStyleClass().add("parking"); break;
-					case 3: tile.getStyleClass().add("path"); break;
+					case 3: tile.getStyleClass().add("path"); tile.setArrow(0); break;
 					case 4: tile.getStyleClass().add("path"); break;
 					case 5: tile.getStyleClass().add("path"); break;
 					case 6: tile.getStyleClass().add("workstation"); break;

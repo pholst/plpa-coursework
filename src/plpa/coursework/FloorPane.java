@@ -56,9 +56,23 @@ public class FloorPane extends Pane {
 			t.setWidth(tileWidth);
 			t.setHeight(tileHeight);
 			getChildren().add(t);
+			
+			if (t.hasArrow()) { 
+				createArrow(t.getXCoord(), t.getYCoord(), t.getArrowDir());
+			}
 		}
 		
 		createRobot();
+	}
+	
+	private void createArrow(int x, int y, int dir) {
+		Image image = new Image(getClass().getResourceAsStream("arrow.png"));
+		ImageView im = new ImageView(image);
+		im.setX(x*tileWidth);
+		im.setY(y*tileHeight);
+		im.setFitHeight(tileWidth);
+		im.setFitWidth(tileHeight);
+		getChildren().add(im);
 	}
 	
 	private void createRobot() {
@@ -69,7 +83,7 @@ public class FloorPane extends Pane {
 		int dir = factory.getRobot().getDir();
 		int dirOld = factory.getRobot().getDirOld();
 		
-		Image image = new Image(getClass().getResourceAsStream("arrow.png"));
+		Image image = new Image(getClass().getResourceAsStream("robot.png"));
 		ImageView im = new ImageView(image);
 		
         im.setX(xOld*tileWidth);

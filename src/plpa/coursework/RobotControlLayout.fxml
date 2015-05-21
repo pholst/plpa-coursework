@@ -19,7 +19,7 @@
          <bottom>
             <AnchorPane prefHeight="30.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="run" mnemonicParsing="false" prefHeight="200.0" prefWidth="280.0" text="Run" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <Button fx:id="run" onAction="#run" mnemonicParsing="false" prefHeight="200.0" prefWidth="280.0" text="Run" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                </children>
                <BorderPane.margin>
                   <Insets top="10.0" />
