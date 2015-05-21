@@ -12,6 +12,9 @@ import javafx.fxml.FXMLLoader;
 
 import java.io.*;
 
+import plpa.coursework.controller.FactoryFloorController;
+import plpa.coursework.controller.RobotControlController;
+import plpa.coursework.controller.RobotExecutionController;
 import javafx.scene.*;
 
 public class MainApp extends Application {
@@ -43,7 +46,7 @@ public class MainApp extends Application {
 
 	private void initRootLayout() throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(MainApp.class.getResource("RootLayout.fxml"));
+        loader.setLocation(MainApp.class.getResource("view/RootLayout.fxml"));
         rootLayout = (SplitPane) loader.load();
 
         Scene scene = new Scene(rootLayout);
@@ -55,7 +58,7 @@ public class MainApp extends Application {
 
 	private void showFactoryFloorLayout() throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(MainApp.class.getResource("FactoryFloorLayout.fxml"));
+        loader.setLocation(MainApp.class.getResource("view/FactoryFloorLayout.fxml"));
         AnchorPane pane = (AnchorPane) loader.load();
         FactoryFloorController controller = loader.getController();
         controller.setApplication(this);
@@ -65,7 +68,7 @@ public class MainApp extends Application {
 	private void loadRobotControlLayout() {
 		try {
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(MainApp.class.getResource("RobotControlLayout.fxml"));
+			loader.setLocation(MainApp.class.getResource("view/RobotControlLayout.fxml"));
 			robotControlLayout = (AnchorPane) loader.load();
 			RobotControlController controller = loader.getController();
 			controller.setApplication(this);
@@ -77,7 +80,7 @@ public class MainApp extends Application {
 	private void loadRobotExecutionLayout() {
 		try {
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(MainApp.class.getResource("RobotExecutionLayout.fxml"));
+			loader.setLocation(MainApp.class.getResource("view/RobotExecutionLayout.fxml"));
 			robotExecutionLayout = (AnchorPane) loader.load();
 			robotExecutionController = loader.getController();
 			robotExecutionController.setApplication(this);
@@ -94,6 +97,11 @@ public class MainApp extends Application {
 	public void showRobotExecutionLayout() {
 		rootLayout.getItems().set(1, robotExecutionLayout);
 		robotExecutionController.updateListView(commands);
+		robotExecutionController.setBackBtnDisabled(true);
+	}
+	
+	public void programExecutionDone() {
+		robotExecutionController.setBackBtnDisabled(false);
 	}
 	
 	public void addCommand(String command) {

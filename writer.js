@@ -45,11 +45,12 @@ var instr = [
 	'11,26,11,2',
 	'11,26,12,2',
 	'11,26,13,2',
-	'error "The robot got tired... poor guy.."' 
+//	'error "The robot got tired... poor guy.."' 
+	'end'
 ];
 
 (function start(instr) {
-	var timeout = 1000;
+	var timeout = 900;
 	var i = 0;
 
 	function repeat() {

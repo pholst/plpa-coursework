@@ -1,5 +1,6 @@
-package plpa.coursework;
+package plpa.coursework.controller;
 
+import plpa.coursework.MainApp;
 import javafx.fxml.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
