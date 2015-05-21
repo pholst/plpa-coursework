@@ -16,9 +16,11 @@ public class RobotControlController {
 	
 	@FXML
 	public void initialize() {
-		run.setOnAction((e) -> { 
-			interpretInput(input.getText());
-		} );
+	}
+	
+	@FXML
+	private void run() {
+		interpretInput(input.getText());
 	}
 	
 	public void setApplication(MainApp app) {

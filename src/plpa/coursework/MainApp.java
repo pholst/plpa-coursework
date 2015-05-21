@@ -4,6 +4,8 @@ import javafx.application.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.stage.Stage;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.SplitPane;
 import javafx.scene.layout.*;
 import javafx.fxml.FXMLLoader;
@@ -104,6 +106,15 @@ public class MainApp extends Application {
 	
 	public RobotExecutionController getRobotExecutionController() {
 		return robotExecutionController;
+	}
+	
+	public void printErrorMessage(String msg) {
+		
+		Alert alert = new Alert(AlertType.ERROR);
+		alert.setTitle("Error");
+		alert.setHeaderText("An error occurred in program execution");
+		alert.setContentText(msg);
+		alert.show();
 	}
 	
 	public static void main(String[] args) {

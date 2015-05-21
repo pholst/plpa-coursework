@@ -78,15 +78,22 @@ public class FactoryFloorController {
 		
 		private void handleInput(String line) {
 			if (!line.equals(previousLine)) {
-				String[] args = line.split(",");
-				robot.setXOld(robot.getX());
-				robot.setYOld(robot.getY());
-				robot.setDirOld(robot.getDir());
-				robot.setX(Integer.parseInt(args[1]));
-				robot.setY(Integer.parseInt(args[2]));
-				robot.setDir(Integer.parseInt(args[3]));
-				floorPane.repaint(); 
-				app.getRobotExecutionController().setInstructionNumber(Integer.parseInt(args[0]));
+				
+				
+				
+				if (line.startsWith("error")) {
+					app.printErrorMessage("Bad things happens..");
+				} else {
+					String[] args = line.split(",");
+					robot.setXOld(robot.getX());
+					robot.setYOld(robot.getY());
+					robot.setDirOld(robot.getDir());
+					robot.setX(Integer.parseInt(args[1]));
+					robot.setY(Integer.parseInt(args[2]));
+					robot.setDir(Integer.parseInt(args[3]));
+					floorPane.repaint(); 
+					app.getRobotExecutionController().setInstructionNumber(Integer.parseInt(args[0]));
+				}
 			}
 			previousLine = line;
 		}
