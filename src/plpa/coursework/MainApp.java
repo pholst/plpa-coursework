@@ -9,6 +9,7 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.SplitPane;
 import javafx.scene.layout.*;
 import javafx.fxml.FXMLLoader;
+import kawa.standard.Scheme;
 
 import java.io.*;
 
@@ -24,6 +25,8 @@ public class MainApp extends Application {
 	private AnchorPane robotControlLayout;
 	private AnchorPane robotExecutionLayout;
 	private RobotExecutionController robotExecutionController;
+	private Scheme scheme;
+	
 
 	private ObservableList<String> commands = FXCollections.observableArrayList();
 	
@@ -33,10 +36,12 @@ public class MainApp extends Application {
 		this.primaryStage.setTitle("Robot factory floor");
 		this.primaryStage.setMaximized(true);
 		
+		Scheme.registerEnvironment();
+		scheme = new Scheme();
+
 		initRootLayout();
 		loadRobotControlLayout();
 		loadRobotExecutionLayout();
-		
 
 		showFactoryFloorLayout();
 		showRobotControlLayout();
@@ -72,6 +77,7 @@ public class MainApp extends Application {
 			robotControlLayout = (AnchorPane) loader.load();
 			RobotControlController controller = loader.getController();
 			controller.setApplication(this);
+			controller.setScheme(scheme);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
