@@ -1,0 +1,79 @@
+<project name="plpa-coursework" default="help" basedir=".">
+
+  <property name="source-directory" value="src/plpa/coursework"/>
+
+  <property name="build-directory" value="bin"/>
+	
+  <property name="minidrawJar" value="lib/minidraw.jar"/>
+  <property name="kawa" value="lib/kawa-1.13.jar"/>
+  
+  <!-- define the class path -->
+  <path id="class-path">
+    <pathelement location="${build-directory}"/>
+  	<pathelement location="${minidrawJar}"/>
+  	<pathelement location="${kawa}"/>
+  </path>
+
+  <target name="help">
+    <echo>
+plpa-coursework:
+  Targets:
+    build: 		Builds production code.
+    clean:     	Removes all bytecode.
+	
+	
+	build-src: 	Build java source code 
+	build-scm: 	Build Scheme to byte code
+	
+	move-to-build: Moves byte files to build-folder
+	
+	run: 		NOT working!
+    </echo>
+  </target>
+  
+  <target name="clean">
+    <delete dir="${build-directory}"/>
+  </target>
+  
+  <target name="prepare">
+    <mkdir dir="${build-directory}"/>
+  </target>
+  
+  <target name="build-src" depends="prepare">
+    <javac srcdir="${source-directory}"
+	   destdir="${build-directory}"
+	   debug="on" 
+	   includeantruntime="no" 
+	   >
+      <classpath refid="class-path"/>
+    </javac>
+  </target>
+  
+  <target name="build-scm" depends="prepare">
+	<java classname="kawa.repl" classpath="${kawa}" dir="${build-directory}">
+      <arg line="-C"/>
+	  <arg path="${source-directory}/map.scm"/>
+	</java>
+  	<java classname="kawa.repl" classpath="${kawa}" dir="${build-directory}">
+  	      <arg line="-C"/>
+  		  <arg path="${source-directory}/robot.scm"/>
+  		</java>
+  </target>
+  
+  <target name="run">
+    <echo>
+	  Not working!
+	</echo>
+  </target>
+  
+  <target name="move-to-build" depends="prepare,build-scm">
+	<move todir="${build-directory}">
+		<fileset dir=".">
+		  <include name="*.class"/>
+		</fileset>
+	</move>
+	</target>
+ 
+  <target name="build" depends="build-scm,move-to-build"/>
+  
+</project>
