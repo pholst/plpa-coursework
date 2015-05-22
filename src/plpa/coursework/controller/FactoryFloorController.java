@@ -1,7 +1,11 @@
-package plpa.coursework;
+package plpa.coursework.controller;
 
 import java.io.*;
 
+import plpa.coursework.Factory;
+import plpa.coursework.FloorPane;
+import plpa.coursework.MainApp;
+import plpa.coursework.Robot;
 import javafx.application.Platform;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
@@ -79,10 +83,10 @@ public class FactoryFloorController {
 		private void handleInput(String line) {
 			if (!line.equals(previousLine)) {
 				
-				
-				
 				if (line.startsWith("error")) {
 					app.printErrorMessage("Bad things happens..");
+				} else if (line.startsWith("end")) {
+					app.programExecutionDone();
 				} else {
 					String[] args = line.split(",");
 					robot.setXOld(robot.getX());

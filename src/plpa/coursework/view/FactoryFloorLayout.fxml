@@ -8,5 +8,5 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<AnchorPane fx:id="factoryFloorPane" prefHeight="300.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="plpa.coursework.FactoryFloorController">
+<AnchorPane fx:id="factoryFloorPane" prefHeight="300.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="plpa.coursework.controller.FactoryFloorController">
 </AnchorPane>
