@@ -3,14 +3,14 @@
   <property name="source-directory" value="src/plpa/coursework"/>
 
   <property name="build-directory" value="bin"/>
+  <property name="scm-directory" value="scm"/>
 	
   <property name="minidrawJar" value="lib/minidraw.jar"/>
-  <property name="kawa" value="lib/kawa-1.13.jar"/>
+  <property name="kawa" value="lib/kawa-2.0.jar"/>
   
   <!-- define the class path -->
   <path id="class-path">
     <pathelement location="${build-directory}"/>
-  	<pathelement location="${minidrawJar}"/>
   	<pathelement location="${kawa}"/>
   </path>
 
@@ -52,12 +52,8 @@ plpa-coursework:
   <target name="build-scm" depends="prepare">
 	<java classname="kawa.repl" classpath="${kawa}" dir="${build-directory}">
       <arg line="-C"/>
-	  <arg path="${source-directory}/map.scm"/>
+	  <arg path="${scm-directory}/map.scm"/>
 	</java>
-  	<java classname="kawa.repl" classpath="${kawa}" dir="${build-directory}">
-  	      <arg line="-C"/>
-  		  <arg path="${source-directory}/robot.scm"/>
-  		</java>
   </target>
   
   <target name="run">
