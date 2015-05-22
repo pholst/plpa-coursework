@@ -42,13 +42,13 @@ public class Factory {
 		Scheme.registerEnvironment();
         	Scheme scm = new Scheme();
 
-        	try {
+/**        	try {
 			scm.loadClass("map");
 		} catch (ClassNotFoundException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-        
+  */
         	Object result = null;
 		try {
 			int width = 32;

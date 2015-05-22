@@ -42,7 +42,7 @@
 ;    )))
 
 
-(define sleeptime 0.8)
+(define sleeptime 0.85)
 
 (define pcount 0)
 (define logFileLocation "/Users/ragnar/school/15-2-TIPLPA/project/pholst-gui/plpa-coursework/log.txt")
@@ -56,19 +56,13 @@
 
 
         (log (lambda (t)
-
-                    ; Log file structure:
-                    ; PC, X, Y, DIRECTION
-                    ; Should the program counter be updated at every step?
-                    ; In kawa: set! &<{log.txt}
                     (begin (set! &<{log.txt} (string-append
-                            (number->string pcount) ","
-                            (number->string (car position)) ","
-                            (number->string (cdr position)) ","
-                            (number->string direction)
-                            "\n"))
-                            (display "log_working?")
-                            )))
+                        (number->string pcount) ","
+                        (number->string (car position)) ","
+                        (number->string (cdr position)) ","
+                        (number->string direction)
+                        "\n"))
+                        )))
 
           (error-log (lambda (t)
                      ; Log file structure:
@@ -88,13 +82,16 @@
                       (begin
                         (sleep sleeptime)
                         (set! pcount (+ 1 pcount))
-                        (set! direction (modulo (- direction n) 4)))))
+                        (set! direction (modulo (- direction n) 4))
+                        (LOG 0))))
         
         (turn-right (lambda (n) 
                      (begin 
                        (sleep sleeptime)
+
                        (set! pcount (+ 1 pcount))
-                       (set! direction (modulo (+ n direction) 4)))))
+                       (set! direction (modulo (+ n direction) 4))
+                       (LOG 0))))
         
         (move-up (lambda ()
                    (set! position (cons (car position) (- (cdr position) 1)))
@@ -200,12 +197,14 @@
   (begin
     (cdr (assq name (cdr r)))))
 
-(define android (create-robot "android"))
 
+(define android (create-robot "android"))
+(define START
+   (lambda (t) ( LOG 0)))
 
 (define (recurse fn n)
   (if (= n 0)
-      null
+      0
       (begin
         (fn n)
 
@@ -226,11 +225,9 @@
 (define LOG (get-from-robot android 'log))
 
 
+(define END
 
-(define plpa-test 
-    (lambda (x)
-    x))
-
-
-(plpa-test (- 7 1))
-
+    (begin
+      (set! pcount (+ 1 pcount))
+      (LOG 0)
+      (set! &<{log.txt} "end")))
