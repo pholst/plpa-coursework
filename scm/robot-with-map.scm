@@ -33,12 +33,13 @@
 
 (define isLegalTile
   (lambda (x y grid)
-    (cond 
-      [(equal? (getTile x y grid) '-) #f]
-      [(equal? (getTile x y grid) 'b) #f]
-      [(equal? (getTile x y grid) 'y) #f]
-      [else #t]
-    )))
+  #t))
+;    (cond
+;      [(equal? (getTile x y grid) '-) #f]
+;      [(equal? (getTile x y grid) 'b) #f]
+;      [(equal? (getTile x y grid) 'y) #f]
+;      [else #t]
+;    )))
 
 
 (define sleeptime 0.8)
@@ -52,34 +53,34 @@
         (position (cons 0 8)) ;; Start in upper corner in red area
         (direction 0) ; 0->E, 1->S, 2->W, 3->N
         (hasObject #f)
-        
+
+
         (log (lambda (t)
-        
-              (with-output-to-file logFileLocation (lambda () (
-              
-                                                                                                                              
-                  ; Log file structure:
-                  ; PC, X, Y, DIRECTION
-                  ; Should the program counter be updated at every step? 
-                                                                                                                             
-                  display (string-append 
-                          (number->string pcount) ","
-                          (number->string (car position)) ","
-                          (number->string (cdr position)) ","
-                          (number->string direction)
-                          "\n"))))
-               ))
+
+                    ; Log file structure:
+                    ; PC, X, Y, DIRECTION
+                    ; Should the program counter be updated at every step?
+                    ; In kawa: set! &<{log.txt}
+                    (begin (set! &<{log.txt} (string-append
+                            (number->string pcount) ","
+                            (number->string (car position)) ","
+                            (number->string (cdr position)) ","
+                            (number->string direction)
+                            "\n"))
+                            (display "log_working?")
+                            )))
 
           (error-log (lambda (t)
-               (with-output-to-file logFileLocation (lambda () (
-                         ; Log file structure:
-                         ; PC, X, Y, DIRECTION
-                         display (string-append
+                     ; Log file structure:
+                     ; PC, X, Y, DIRECTION
+                    (begin (set! &<{log.txt} (string-append
                             "error,"
                             (number->string pcount)
                             "....."
-                            "\n")))))
-               )
+                            "\n"))
+                            (display "stopped, error")
+                            )))
+
         (lastDirection (cons 0 0))
 
         

@@ -25,7 +25,6 @@ public class RobotControlController {
 	private void run() {
 		String in = input.getText();
 		interpretInput(in);
-
         StringBuilder result = new StringBuilder();
 
 
@@ -39,13 +38,10 @@ public class RobotControlController {
             e.printStackTrace();
         }
 
-        System.out.println(result.toString());
-
 		try {
             result.append(in);
-            Object obj = (Object) scheme.eval(result.toString());
-
-            System.out.println(obj);
+            Thread t = new SchemeThread(result.toString());
+            t.start();
 		} catch (Throwable e) {
 			e.printStackTrace();
 		}
@@ -68,4 +64,21 @@ public class RobotControlController {
 		}
 		app.showRobotExecutionLayout(); 
 	}
+
+    class SchemeThread extends Thread {
+        private String codeToExecute;
+        public SchemeThread(String codeToExecute) {
+            this.codeToExecute = codeToExecute;
+        }
+
+        public void run() {
+
+            try {
+                Object obj = (Object) scheme.eval(codeToExecute);
+                System.out.println(obj);
+            } catch (Throwable t) {
+                t.printStackTrace();
+            }
+        }
+    }
 }
