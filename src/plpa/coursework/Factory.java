@@ -1,6 +1,7 @@
 package plpa.coursework;
 
 import java.util.ArrayList;
+import kawa.standard.Scheme;
 
 public class Factory {
 	
@@ -37,6 +38,58 @@ public class Factory {
 	
 	public Factory(Robot robot) {
 		this.robot = robot; 
+		
+		Scheme.registerEnvironment();
+        	Scheme scm = new Scheme();
+
+        	try {
+			scm.loadClass("map");
+		} catch (ClassNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+        
+        	Object result = null;
+		try {
+			int width = 32;
+			
+			result = scm.eval("floor");
+			
+			String sch = result.toString();
+			
+			sch = sch.replaceAll("\\[","");
+			sch = sch.replaceAll("\\]","");
+			
+			String[] array = sch.split(", ");
+				
+			int j = 0;
+			for(int i=0;i<=array.length-1;i++){
+				int res = 0;
+				int h = i % width;
+				if(h == 0 && i != 0){
+					j++;
+				}
+				switch (array[i]) {
+					case "-": res = 0; break;
+					case "g": res = 1; break;
+					case "r": res = 2; break;
+					case "v": res = 3; break;
+					case ">": res = 4; break;
+					case "<": res = 5; break;
+					case "b": res = 7; break;
+					case "0": res = 10; break;
+					case "1": res = 11; break;
+					case "2": res = 12; break;
+					case "3": res = 13; break;
+					case "4": res = 14; break;
+					default: res = 0; 
+				}
+				floor[j][h] = res;
+			}
+		} catch (Throwable e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	public int floorWidth() {
