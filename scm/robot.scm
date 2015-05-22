@@ -1,4 +1,3 @@
- #lang racket
 (require "map.scm")
 
 (define sleeptime 0.5)
@@ -7,7 +6,7 @@
 (define (create-robot name)
   (let* (
         (position (cons 0 8)) ;; Start in upper corner in red area
-        (direction 0) ; 0->E, 1->S, 2->W, 3->N
+        (direction 0) ; 0->N, 1->E, 2->S, 3->W
         (hasObject #f)
         
         (log (lambda (t)
@@ -23,7 +22,7 @@
                           (number->string (car position)) ","
                           (number->string (cdr position)) ","
                           (number->string direction)
-                          "\n"))) #:exists 'truncate)
+                          "\n"))) )
                ))
 
                 (error-log (lambda (t)
@@ -37,7 +36,7 @@
                           "error,"
                           (number->string pcount)
                           "....."
-                          "\n"))) #:exists 'truncate)
+                          "\n"))) )
                ))
         (lastDirection (cons 0 0))
 
@@ -75,7 +74,7 @@
                      (set! position (cons (- (car position) 1) (cdr position)))
                      position))
 
-        (newpos (lambda (pos, direction)
+        (newpos (lambda (pos  direction)
                       (if (= direction 0)
                          (cons
                            (car pos) ; if direction = 1,3, modify
@@ -165,7 +164,7 @@
 
 (define (recurse fn n)
   (if (= n 0)
-      null
+      0
       (begin
         (fn n)
 

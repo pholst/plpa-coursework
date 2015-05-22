@@ -1,7 +1,6 @@
-#lang racket
-(provide floor)
-(provide isLegalTile)
-(provide getTile)
+(provide 'floor)
+(provide 'isLegalTile)
+(provide 'getTile)
 
 (define floor
 	( vector 
