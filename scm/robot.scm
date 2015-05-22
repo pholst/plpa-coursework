@@ -1,67 +1,50 @@
+ #lang racket
 (require "map.scm")
 
-(define sleeptime 0.5)
      
 
 (define (create-robot name)
   (let* (
         (position (cons 0 8)) ;; Start in upper corner in red area
-        (direction 0) ; 0->N, 1->E, 2->S, 3->W
+        (direction 0) ; 0->E, 1->S, 2->W, 3->N
         (hasObject #f)
         
         (log (lambda (t)
               (with-output-to-file "/Users/ragnar/school/15-2-TIPLPA/project/pholst-gui/plpa-coursework/log.txt" (lambda () (
-              
-                                                                                                                              
+                                                        
                   ; Log file structure:
                   ; PC, X, Y, DIRECTION
-                  ; Should the program counter be updated at every step? 
-                                                                                                                             
                   printf (string-append 
-                          (number->string pcount) ","
+                          (if (number? t)
+                            (number->string t)
+                            t) ","
+                            
                           (number->string (car position)) ","
                           (number->string (cdr position)) ","
                           (number->string direction)
-                          "\n"))) )
+                          "\n"))) #:exists 'truncate)
                ))
 
-                (error-log (lambda (t)
-              (with-output-to-file "/Users/ragnar/school/15-2-TIPLPA/project/pholst-gui/plpa-coursework/log.txt" (lambda () (
-              
-                                                                                                                              
-                  ; Log file structure:
-                  ; PC, X, Y, DIRECTION
-                  (sleep sleeptime)                                                                                                           
-                  printf (string-append 
-                          "error,"
-                          (number->string pcount)
-                          "....."
-                          "\n"))) )
-               ))
         (lastDirection (cons 0 0))
 
         
         (turn-left (lambda (n) 
                       (begin
-                        (sleep sleeptime)
-                        (set! pcount (+ 1 pcount))
-                        (set! direction (modulo (- direction n) 4))
+                        (set! direction (modulo (- n direction) 4))
                         (log 0)
                         )))
         (turn-right (lambda (n) 
                      (begin 
-                       (sleep sleeptime)
-                       (set! pcount (+ 1 pcount))
                        (set! direction (modulo (+ n direction) 4))
                        (log 9)
                        )))
         
         (move-up (lambda ()
-                   (set! position (cons (car position) (- (cdr position) 1)))
+                   (set! position (cons (car position) (- 1 (cdr position))))
                  position))
         
         (move-right (lambda () 
-                   (set! position (cons (+ (car position) 1) (cdr position)))
+                   (set! position (cons (+ 1 (car position)) (cdr position)))
                  position))
         
               
@@ -71,57 +54,24 @@
 
             
         (move-left (lambda () 
-                     (set! position (cons (- (car position) 1) (cdr position)))
+                     (set! position (cons (- 1 (car position)) (cdr position)))
                      position))
 
-        (newpos (lambda (pos  direction)
-                      (if (= direction 0)
-                         (cons
-                           (car pos) ; if direction = 1,3, modify
-                           (- (cdr pos) 1)
-                      )
-                                                 
-                                (if (= direction 1) 
-                                    (cons (+ (car pos) 1) (cdr pos)) 
-                                    (if (= direction 2) 
-                                        (cons (car pos) (+ (cdr pos) 1))  
-                                        (cons (- (car pos) 1) (cdr pos))
-                                ))) 
-                
-                    ))
-        
         (move-forward (lambda (number_of_steps)
                         (begin
-                            
-                            (display "Moving from ")
-                            (display position)
-                            (display " to ")
-                            (display (newpos position direction))
-                            
-                            (if (isLegalTile (car (newpos position direction)) (cdr (newpos position direction)) floor) 
-                                (begin 
-                                  (display " (√) ") 
-                                     (if (= direction 0)
-                                       (move-up) 
-                                       (if (= direction 1) 
-                                         (move-right) 
-                                         (if (= direction 2) 
-                                           (move-down)  
-                                           (move-left)
-                                ))))
-                                (begin 
-                                  (display " (X) ")
-                                  (error-log pcount)
-                                  (exit)
-                            )) 
-                            
-                            (display position)
-                            (display newpos)
-                            (display " dir: ")(display direction)
-                            (sleep sleeptime)
-                            (log number_of_steps)
+                          
+                            ;(display (getTile (car position) (cdr position) floor))
+                          
+                            (if (= direction 0) (move-up) ; Does not work as expected
+                            (if (= direction 1) (move-right) ; Seems to work
+                                (if (= direction 2) (move-down) ; Seems to work
+                                    (if (= direction 3) (move-left) 'UnknownDirection)))) ; Not tested
+                            (sleep 1)
+                            (log (number->string number_of_steps))
                             (newline)
-        )))
+                         
+
+                            )))
         
         (pick-object (lambda(object_id) 
                        (if (eq? #t hasObject) 
@@ -151,62 +101,53 @@
           (cons 'turn-left  turn-left)
           (cons 'turn-right turn-right) )))
    
-
-(define pcount 0)
-
 (define (get-from-robot r name)
-  (begin
-    (cdr (assq name (cdr r))))
-  )
+  (cdr (assq name (cdr r))))
 
 (define android (create-robot "android"))
 
 
 (define (recurse fn n)
   (if (= n 0)
-      0
+      null
       (begin
         (fn n)
-
         (recurse fn (- n 1)))))
 
-
-
 ; Mappings from our dsl -> robot
-(define MOVE_FORWARD (lambda (n)  
-                      (begin 
-                        (set! pcount (+ 1 pcount))
-                        (recurse (get-from-robot android 'move-forward) n )
-                      )))
+(define MOVE_FORWARD (lambda (n) ( 
+                      recurse (get-from-robot android 'move-forward) n )))
+(define GOLEFT (get-from-robot android 'move-left))
 (define DROP_OBJECT (get-from-robot android 'drop-object))
 (define PICK_OBJECT (get-from-robot android 'pick-object))
 (define TURN_LEFT (get-from-robot android 'turn-left))
 (define TURN_RIGHT (get-from-robot android 'turn-right))
 (define LOG (get-from-robot android 'log))
 
+(LOG 0)
 
 
-; List of commands (fed from GUI)
+; Rewrite log to show one line. Use sleep.
+;
 
-(LOG 0) ; Places the robot in (0 . 8)
+(define commands (list 
+  (TURN_RIGHT 1) ; 0,8,1
+  (MOVE_FORWARD 8) ; 8,8,1
+  (TURN_LEFT 1) ; 8,8,0
+  (MOVE_FORWARD 1)
+;  (MOVE_FORWARD 3) ; 8, -7, 0, should be 8,4,0
+;  (TURN_RIGHT 2)
+;  (MOVE_FORWARD 4)
+  
 
-(TURN_RIGHT 1)
-(MOVE_FORWARD 8)
-(TURN_LEFT 1)
-(MOVE_FORWARD 7)
-(TURN_LEFT 1)
-(MOVE_FORWARD 2)
-(TURN_LEFT 1) ; Drop obj
-(TURN_LEFT 1)
-(MOVE_FORWARD 2)
-(TURN_RIGHT 1)
-(MOVE_FORWARD 3)
-(TURN_RIGHT 1) ; Pick obj
-(TURN_LEFT 1)
-(MOVE_FORWARD 4)
-(TURN_LEFT 1)
-(MOVE_FORWARD 12)
-(TURN_RIGHT 1)
-(MOVE_FORWARD 6)
+;  (MOVE_BACKWARD 4)
+;  (PICK_OBJECT "P1")
+;  (TURN_RIGHT 3)
+;  (MOVE_FORWARD 7)
+;  (TURN_RIGHT 1)
+;  (DROP_OBJECT "P1")
+;  (LOG "test log")
+))
 
+commands
 

@@ -10,7 +10,7 @@
    <children>
       <BorderPane layoutX="8.0" layoutY="14.0" prefHeight="600.0" prefWidth="300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <center>
-            <TextArea fx:id="input" prefHeight="200.0" prefWidth="200.0" text="(TURN_RIGHT 1)&#10;(MOVE 2)&#10;(TURN_RIGHT 1)&#10;(MOVE 3)&#10;(TURN_LEFT 1)&#10;(MOVE 17)&#10;(TURN_LEFT 1)&#10;(MOVE 5)&#10;(TURN_RIGHT 1)&#10;(MOVE 6)&#10;(TURN_RIGHT 1)&#10;(MOVE 5)" BorderPane.alignment="CENTER">
+            <TextArea fx:id="input" prefHeight="200.0" prefWidth="200.0" text="(LOG 0)&#10;(TURN_RIGHT 1)&#10;(MOVE_FORWARD 8)&#10;(TURN_LEFT 1)&#10;(MOVE_FORWARD 7)&#10;(TURN_LEFT 1)&#10;(MOVE_FORWARD 2)&#10;(TURN_LEFT 1)&#10;(TURN_LEFT 1)&#10;(MOVE_FORWARD 2)&#10;(TURN_RIGHT 1)&#10;(MOVE_FORWARD 3)&#10;(TURN_RIGHT 1)&#10;(TURN_LEFT 1)&#10;(MOVE_FORWARD 4)&#10;(TURN_LEFT 1)&#10;(MOVE_FORWARD 12)&#10;(TURN_RIGHT 1)&#10;(MOVE_FORWARD 5)" BorderPane.alignment="CENTER">
                <BorderPane.margin>
                   <Insets />
                </BorderPane.margin>
