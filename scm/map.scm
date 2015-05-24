@@ -39,6 +39,10 @@
     (cond 
       [(equal? (getTile x y grid) '-) #f]
       [(equal? (getTile x y grid) 'b) #f]
-      [(equal? (getTile x y grid) 'y) #f]
+      [(equal? (getTile x y grid) '0) #f]
+	  [(equal? (getTile x y grid) '1) #f]
+	  [(equal? (getTile x y grid) '2) #f]
+	  [(equal? (getTile x y grid) '3) #f]
+	  [(equal? (getTile x y grid) '4) #f]
       [else #t]
     )))
